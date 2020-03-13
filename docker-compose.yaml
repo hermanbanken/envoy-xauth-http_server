@@ -1,0 +1,17 @@
+version: '3.2'
+services:
+  gateway:
+    image: envoyproxy/envoy
+    command: ["envoy", "-c", "/data/envoy.yaml"]
+    volumes:
+      - "./:/data"
+    ports:
+      - "8080:80"
+  auth:
+    build: .
+    ports:
+      - "666:666"
+    environment:
+      - PORT=666
+  target-server:
+    image: nginx:mainline
