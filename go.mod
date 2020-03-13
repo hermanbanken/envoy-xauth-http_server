@@ -1,4 +1,4 @@
-module github.com/Q42Philips/gateway
+module https://github.com/hermanbanken/envoy-xauth-http_server
 
 go 1.13
 
